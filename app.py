@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, abort
 from models import setup_db, Dancer, Event, db
 from auth import requires_auth
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 
