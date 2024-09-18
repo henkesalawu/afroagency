@@ -8,7 +8,7 @@ def create_app():
     app = Flask(__name__)
 
     # Load configuration from environment variables
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://localhost/yourlocaldb')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['AUTH0_DOMAIN'] = os.environ.get('AUTH0_DOMAIN')
     app.config['API_IDENTIFIER'] = os.environ.get('API_IDENTIFIER')
