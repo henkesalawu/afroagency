@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, abort
-from models import setup_db, Dancer, Event, db
+from models import Dancer, Event, db
 from auth import requires_auth
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -11,7 +11,6 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
-setup_db(app, database_path)
 migrate = Migrate(app, db)
 
 # GET /dancers - public route to get all dancers
