@@ -213,7 +213,7 @@ def delete_dancer(payload, id):
 # DELETE event
 @app.route('/events/<int:id>', methods=['DELETE'])
 @requires_auth('delete:event')
-def delete_event(id):
+def delete_event(payload, id):
     event = Event.query.get(id)
 
     if not event:
