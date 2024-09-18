@@ -2,11 +2,9 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, Date
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 db = SQLAlchemy()
-
 
 class Dancer(db.Model):
     __tablename__ = 'dancers'

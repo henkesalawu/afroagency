@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, abort
 from models import Dancer, Event, db
-from auth import requires_auth
+from auth import requires_auth, AuthError
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -17,40 +17,56 @@ migrate = Migrate(app, db)
 def home():
     return ('Welcome to Afrobeats Dance Agency')
 
-# GET /dancers - public route to get all dancers
+# Display all dancers
 @app.route('/dancers', methods=['GET'])
 def get_dancers():
-    dancers = Dancer.query.all()
-    return jsonify({'success': True, 'dancers': [d.serialize() for d in dancers]}), 200
+    try:
+        dancers = Dancer.query.all()
+    
+        if len(dancers) == 0:
+            abort(404)
+    
+        return jsonify({
+            'success': True, 
+            'dancers': [d.serialize() for d in dancers],
+            'total_dancers':len(dancers)
+        }), 200
+    except Exception as e:
+        app.logger.error(e)
+        db.session.rollback()
+        abort(422)
 
-# GET /events - public route to get all events
+# GET Display all events
 @app.route('/events', methods=['GET'])
 def get_events():
     events = Event.query.all()
     return jsonify({'success': True, 'events': [e.serialize() for e in events]}), 200
 
-# GET /dancers/<id> - requires permission get:dancer-details
+# Display dancer b
 @app.route('/dancers/<int:id>', methods=['GET'])
 @requires_auth('get:dancer-details')
-def get_dancer_details(id):
+def get_dancer_details(payload, id):
     dancer = Dancer.query.get(id)
     if not dancer:
         abort(404)
-    return jsonify({'success': True, 'dancer': dancer.serialize()}), 200
+    return jsonify({
+        'success': True, 
+        'dancer': dancer.serialize()
+    }), 200
 
-# GET /events/<id> - requires permission get:event-details
+# Display event
 @app.route('/events/<int:id>', methods=['GET'])
 @requires_auth('get:event-details')
-def get_event_details(id):
+def get_event_details(payload, id):
     event = Event.query.get(id)
     if not event:
         abort(404)
     return jsonify({'success': True, 'event': event.serialize()}), 200
 
-# POST /dancers - requires permission add:dancer
+# Add dancer
 @app.route('/dancers', methods=['POST'])
 @requires_auth('add:dancer')
-def add_dancer():
+def add_dancer(payload):
     data = request.get_json()
     name = data.get('name')
     age = data.get('age')
@@ -60,16 +76,29 @@ def add_dancer():
 
     if not name or not age or not gender:
         abort(400)
+    try:
+        new_dancer = Dancer(
+            name=name, 
+            age=age, 
+            gender=gender, 
+            phone=phone, 
+            website=website
+        )
+        
+        db.session.add(new_dancer)
+        db.session.commit()
 
-    new_dancer = Dancer(name=name, age=age, gender=gender, phone=phone, website=website)
-    new_dancer.insert()
+        return jsonify({
+            'success': True, 
+            'new_dancer': new_dancer.serialize()
+        }), 201
+    except Exception:
+        abort(422)
 
-    return jsonify({'success': True, 'dancer': new_dancer.serialize()}), 201
-
-# POST /events - requires permission add:event
+# Add Events
 @app.route('/events', methods=['POST'])
 @requires_auth('add:event')
-def add_event():
+def add_event(payload):
     data = request.get_json()
     name = data.get('name')
     address = data.get('address')
@@ -77,90 +106,179 @@ def add_event():
 
     if not name or not address or not date:
         abort(400)
+    try:
 
-    new_event = Event(name=name, address=address, date=date)
-    new_event.insert()
+        new_event = Event(
+            name=name, 
+            address=address, 
+            date=date
+        )
+        db.session.add(new_event)
+        db.session.commit()
 
-    return jsonify({'success': True, 'event': new_event.serialize()}), 201
+        return jsonify({
+            'success': True, 
+            'event': new_event.serialize()
+        }), 201
+    except Exception as e:
+        app.logger.error(e)
+        db.session.rollback()
+        abort(422)
 
-# PATCH /dancers/<id> - requires permission edit:dancer
+# Edit dancer
 @app.route('/dancers/<int:id>', methods=['PATCH'])
 @requires_auth('edit:dancer')
-def update_dancer(id):
+def update_dancer(payload,id):
     dancer = Dancer.query.get(id)
     if not dancer:
-        abort(404)
+        return jsonify({
+            'success': False,
+            'message': 'Dancer to edit not found'
+        }), 404
 
     data = request.get_json()
+    try:
+        if 'name' in data:
+            dancer.name = data['name']
+        if 'age' in data:
+            dancer.age = data['age']
+        if 'gender' in data:
+            dancer.gender = data['gender']
+        if 'phone' in data:
+            dancer.phone = data['phone']
+        if 'website' in data:
+            dancer.website = data['website']
 
-    dancer.name = data.get('name', dancer.name)
-    dancer.age = data.get('age', dancer.age)
-    dancer.gender = data.get('gender', dancer.gender)
-    dancer.phone = data.get('phone', dancer.phone)
-    dancer.website = data.get('website', dancer.website)
+        db.session.commit()
 
-    dancer.update()
+        return jsonify({
+            'success': True, 
+            'updated_dancer': dancer.serialize()
+        }), 200
+    except Exception as e:
+        app.logger.error(f"Dancer could not be updated: {e}")
+        db.session.rollback()
+        abort(422)
 
-    return jsonify({'success': True, 'dancer': dancer.serialize()}), 200
-
-# PATCH /events/<id> - requires permission edit:event
+# Edit event
 @app.route('/events/<int:id>', methods=['PATCH'])
 @requires_auth('edit:event')
-def update_event(id):
+def update_event(payload, id):
     event = Event.query.get(id)
     if not event:
         abort(404)
 
     data = request.get_json()
+    try:
+        if 'name' in data:
+            event.name = data['name']
+        if 'address' in data:
+            event.address = data['address']
+        if 'date' in data:
+            event.date = data['date']
 
-    event.name = data.get('name', event.name)
-    event.address = data.get('address', event.address)
-    event.date = data.get('date', event.date)
+        event.update()
 
-    event.update()
+        return jsonify({
+            'success': True, 
+            'event': event.serialize()
+        }), 200
+    except Exception as e:
+        app.logger.error(e)
+        db.session.rollback()
+        abort(422)
 
-    return jsonify({'success': True, 'event': event.serialize()}), 200
-
-# DELETE /dancers/<id> - requires permission delete:dancer
+# DELETE dancer
 @app.route('/dancers/<int:id>', methods=['DELETE'])
 @requires_auth('delete:dancer')
-def delete_dancer(id):
+def delete_dancer(payload, id):
+    
     dancer = Dancer.query.get(id)
+    
     if not dancer:
         abort(404)
+    try:
+        dancer.delete()
 
-    dancer.delete()
+        return jsonify({
+            'success': True, 
+            'deleted_dancer': id
+        }), 200
+    except Exception as e:
+        app.logger.error(e)
+        db.session.rollback()
+        abort(422)
 
-    return jsonify({'success': True, 'deleted': id}), 200
-
-# DELETE /events/<id> - requires permission delete:event
+# DELETE event
 @app.route('/events/<int:id>', methods=['DELETE'])
 @requires_auth('delete:event')
 def delete_event(id):
     event = Event.query.get(id)
+
     if not event:
         abort(404)
+    try:
+        event.delete()
 
-    event.delete()
-
-    return jsonify({'success': True, 'deleted': id}), 200
+        return jsonify({
+            'success': True, 
+            'deleted_event': id
+        }), 200
+    except Exception as e:
+        app.logger.error(e)
+        db.session.rollback()
+        abort(422)
 
 # Error Handling
 @app.errorhandler(400)
 def bad_request(error):
-    return jsonify({"success": False, "error": 400, "message": "bad request"}), 400
+    return jsonify({
+        "success": False, 
+        "error": 400, 
+        "message": "Bad request"
+    }), 400
 
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({"success": False, "error": 404, "message": "resource not found"}), 404
+    return jsonify({
+        "success": False, 
+        "error": 404, 
+        "message": "Resource not found/empty"
+    }), 404
 
 @app.errorhandler(403)
 def forbidden(error):
-    return jsonify({"success": False, "error": 403, "message": "forbidden"}), 403
+    return jsonify({
+        "success": False, 
+        "error": 403, 
+        "message": "Forbidden"
+    }), 403
 
 @app.errorhandler(401)
 def unauthorized(error):
-    return jsonify({"success": False, "error": 401, "message": "unauthorized"}), 401
+    return jsonify({
+        "success": False, 
+        "error": 401, 
+        "message": 
+        "Unauthorized"
+    }), 401
+
+@app.errorhandler(422)
+def unproccessable(error):
+    return jsonify({
+        "success": False, 
+        "error": 422, 
+        "message": 
+        "Unable to process"
+    }), 401
+
+@app.errorhandler(AuthError)
+def auth_error(e):
+        return jsonify({
+            "success": False,
+            "error": e.status_code,
+            "message": e.error
+        }), e.status_code
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
