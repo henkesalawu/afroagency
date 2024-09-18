@@ -15,7 +15,7 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def home():
-    return (Welcome to Afrobeats Dance Agency)
+    return ('Welcome to Afrobeats Dance Agency')
 
 # GET /dancers - public route to get all dancers
 @app.route('/dancers', methods=['GET'])
