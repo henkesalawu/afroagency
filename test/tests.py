@@ -203,3 +203,6 @@ class AfroBeatsAgencyTestCase(unittest.TestCase):
 # Make the tests conveniently executable
 if __name__ == "__main__":
     unittest.main()
+
+    #pip install unittest
+    # python tests.py
