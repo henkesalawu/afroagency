@@ -14,9 +14,6 @@ app.config.from_object(Config)
 db.init_app(app)
 migrate = Migrate(app, db)
 
-def format_date(date_string):
-    return datetime.strptime(date_string, '%d-%m-%Y').strftime('%Y-%m-%d')
-
 
 @app.route('/')
 def home():
@@ -107,7 +104,13 @@ def add_event(payload):
     data = request.get_json()
     name = data['name']
     address = data['address']
-    date = format_date(data['date'])
+    try:
+        date = datetime.strptime(data['date'], '%Y-%m-%d').date()
+    except ValueError:
+        return jsonify({
+            'success': False,
+            'message': "Date must vbe YYY-MM-DD"
+        }), 400
 
     if not name or not address or not date:
         abort(400)
