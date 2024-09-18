@@ -6,12 +6,17 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from config import Config
 import re
+from datetime import datetime
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
 db.init_app(app)
 migrate = Migrate(app, db)
+
+def format_date(date_string):
+    return datetime.strptime(date_string, '%d-%m-%Y').strftime('%Y-%m-%d')
+
 
 @app.route('/')
 def home():
@@ -100,9 +105,9 @@ def add_dancer(payload):
 @requires_auth('add:event')
 def add_event(payload):
     data = request.get_json()
-    name = data.get('name')
-    address = data.get('address')
-    date = data.get('date')
+    name = data['name']
+    address = data['address']
+    date = format_date(data['date'])
 
     if not name or not address or not date:
         abort(400)
@@ -175,9 +180,9 @@ def update_event(payload, id):
         if 'address' in data:
             event.address = data['address']
         if 'date' in data:
-            event.date = data['date']
+            event.date = format_date(data['date'])
 
-        event.update()
+        db.session.commit()
 
         return jsonify({
             'success': True, 
