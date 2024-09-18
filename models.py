@@ -2,14 +2,21 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, Date
 from dotenv import load_dotenv
 import os
+import re
+
 
 load_dotenv()
 
 db = SQLAlchemy()
 
+uri = os.getenv("DATABASE_URL")
+# or other relevant config var
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+
 # Set up the database connection
 def setup_db(app, database_path):
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
+    app.config["SQLALCHEMY_DATABASE_URI"] = uri
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
