@@ -68,11 +68,13 @@ Install project dependencies:
 pip install -r requirements.txt
 ```
 
-Set up env vari:
 
-$ source setup.sh
+Set up env vari:
+remove .env from .gitignorefile
+
 $ export FLASK_APP=app.py
 $ export FLASK_ENV=development
+
 $ flask run
 
 ```bash
