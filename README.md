@@ -272,14 +272,17 @@ returns new event
 Permission: 'add:dancer'
 returns new dancer
 
-Unit tests are provided in `test_app.py`. 
+Unit tests are provided in `test_app.py`.
+test_app.py include tokens when running app locally_
 To run the tests
 
-```bash
 drop database testagency
 create database testagency
-psql testagency < init_data.sql
+
+Add data to the db from < init_data.sql
+
+Run tests:
 python test_app.py
-```
+
 
 Tests for functionality of the endpoints and the role-based access control.
