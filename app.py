@@ -4,7 +4,10 @@ from auth import requires_auth
 from flask_migrate import Migrate
 
 app = Flask(__name__)
-database_path = 'postgresql://postgres:postgres@localhost:5432/afrobeatsagency'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
 setup_db(app, database_path)
 migrate = Migrate(app, db)
 

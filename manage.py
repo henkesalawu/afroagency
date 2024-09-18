@@ -1,7 +1,6 @@
 import os
 from flask import Flask
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager
 from models import db, Dancer, Event  # Import your models here
 
 def create_app():
@@ -23,15 +22,6 @@ def create_app():
         return app
 
 app = create_app()
-
-# Initialize Flask-Script Manager
-manager = Manager(app)
-manager.add_command('db', MigrateCommand)
-
-@manager.command
-def runserver():
-    """Run the Flask development server."""
-    app.run(debug=True)
 
 if __name__ == '__main__':
     manager.run()
