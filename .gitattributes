@@ -1,0 +1,6 @@
+# Handle line endings for text files
+* text=auto
+
+# Specify text files explicitly if needed
+*.py text
+*.md text
