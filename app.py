@@ -8,6 +8,7 @@ from config import Config
 import re
 
 app = Flask(__name__)
+
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 setup_db(app, database_path)
