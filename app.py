@@ -198,7 +198,8 @@ def delete_dancer(payload, id):
     if not dancer:
         abort(404)
     try:
-        dancer.delete()
+        db.session.delete(dancer)
+        db.session.commit()
 
         return jsonify({
             'success': True, 
@@ -218,7 +219,8 @@ def delete_event(id):
     if not event:
         abort(404)
     try:
-        event.delete()
+        db.session.delete(event)
+        db.session.commit()
 
         return jsonify({
             'success': True, 
