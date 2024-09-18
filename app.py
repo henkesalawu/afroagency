@@ -10,6 +10,7 @@ import re
 app = Flask(__name__)
 
 app.config.from_object(Config)
+db.init_app(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
