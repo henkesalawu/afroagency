@@ -111,16 +111,10 @@ flask run
 This project is hosted live on Heroku.
 ## URL Location
 https://afrobeatsagency-5975d5a5c006.herokuapp.com/
+https://harsh-casting-agency.herokuapp.com/dancers
+https://harsh-casting-agency.herokuapp.com/events
 
-To test endpoints you can execute through CURL or postmand
-$ curl -X GET https://harsh-casting-agency.herokuapp.com/dancers
-$ curl -X GET https://harsh-casting-agency.herokuapp.com/dancers/1
-$ curl -X GET https://harsh-casting-agency.herokuapp.com/events
-$ curl -X GET https://harsh-casting-agency.herokuapp.com/events/1
-$ curl -X POST https://harsh-casting-agency.herokuapp.com/events
-$ curl -X POST https://harsh-casting-agency.herokuapp.com/dancers
-$ curl -X PATCH https://harsh-casting-agency.herokuapp.com/dancers/1
-$ curl -X DELETE https://harsh-casting-agency.herokuapp.com/events/1
+You can find postman collection attached in the application folder to test the endpoints
 
 ## Hosting Instructions
 Install the Heroku CLI.

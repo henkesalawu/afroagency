@@ -42,7 +42,10 @@ def get_dancers():
 @app.route('/events', methods=['GET'])
 def get_events():
     events = Event.query.all()
-    return jsonify({'success': True, 'events': [e.serialize() for e in events]}), 200
+    return jsonify({
+        'success': True, 
+        'events': [e.serialize() for e in events]
+    }), 200
 
 # Display dancer b
 @app.route('/dancers/<int:id>', methods=['GET'])
@@ -63,7 +66,10 @@ def get_event_details(payload, id):
     event = Event.query.get(id)
     if not event:
         abort(404)
-    return jsonify({'success': True, 'event': event.serialize()}), 200
+    return jsonify({
+        'success': True, 
+        'event': event.serialize()
+    }), 200
 
 # Add dancer
 @app.route('/dancers', methods=['POST'])
@@ -105,11 +111,11 @@ def add_event(payload):
     name = data['name']
     address = data['address']
     try:
-        date = datetime.strptime(data['date'], '%Y-%m-%d').date()
+        date = datetime.strptime(data['date'],'%Y-%m-%d').date()
     except ValueError:
         return jsonify({
             'success': False,
-            'message': "Date must vbe YYY-MM-DD"
+            'message': "Date must be YYYY-MM-DD"
         }), 400
 
     if not name or not address or not date:

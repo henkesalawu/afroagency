@@ -1,0 +1,773 @@
+{
+	"info": {
+		"_postman_id": "a3dbae51-233f-45cb-90b7-e55120dead09",
+		"name": "AfroAgency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37627053"
+	},
+	"item": [
+		{
+			"name": "DancerAgent",
+			"item": [
+				{
+					"name": "/dancers/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMmM0NDFiZmQ0M2Q3ZGY1OTUzZSIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MTkxNiwiZXhwIjoxNzI2NjY5MTE2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImRlbGV0ZTpkYW5jZXIiLCJlZGl0OmRhbmNlciIsImdldDpkYW5jZXItZGV0YWlscyJdfQ.K-UZ0X2qbrOCnFrE74IkMQGBkVpvg2_qMY_UUQlDUgNwoGe5j7IcXuvIi_Z8yxfLMI0I9nfiPXujyAVS-rwuDQ_rWIOQXjja9enBLUi1kAggLQIr9p6Q2-vfVXDradzSIEoqrsjWW27Km654Sx8HwmLw5_8yIWt6GLPmmkAxqY0tAV4SFj_hzufarQRJ3VDLry3NGUadSBGzcjY0T3QVXCrMHUlGJGXHxIFbdXLwbvoE2HmluTpEyoCZFCL8s8OrUBJR4yDsh1FKepRVojDIVhuPu0546wdLTPN850pSUj4TKbB7IUvla4_JZMgJJTJzeB3N7cMrWv5BIR1HcMR7JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/1",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"1"
+							]
+						},
+						"description": "Get dancer by id get:dancer-details"
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMmM0NDFiZmQ0M2Q3ZGY1OTUzZSIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MTkxNiwiZXhwIjoxNzI2NjY5MTE2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImRlbGV0ZTpkYW5jZXIiLCJlZGl0OmRhbmNlciIsImdldDpkYW5jZXItZGV0YWlscyJdfQ.K-UZ0X2qbrOCnFrE74IkMQGBkVpvg2_qMY_UUQlDUgNwoGe5j7IcXuvIi_Z8yxfLMI0I9nfiPXujyAVS-rwuDQ_rWIOQXjja9enBLUi1kAggLQIr9p6Q2-vfVXDradzSIEoqrsjWW27Km654Sx8HwmLw5_8yIWt6GLPmmkAxqY0tAV4SFj_hzufarQRJ3VDLry3NGUadSBGzcjY0T3QVXCrMHUlGJGXHxIFbdXLwbvoE2HmluTpEyoCZFCL8s8OrUBJR4yDsh1FKepRVojDIVhuPu0546wdLTPN850pSUj4TKbB7IUvla4_JZMgJJTJzeB3N7cMrWv5BIR1HcMR7JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jess\",\r\n    \"age\": 23,\r\n    \"gender\": \"female\",\r\n    \"phone\": \"234-234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers"
+							]
+						},
+						"description": "Add new dancer add:dancer"
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMmM0NDFiZmQ0M2Q3ZGY1OTUzZSIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MTkxNiwiZXhwIjoxNzI2NjY5MTE2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImRlbGV0ZTpkYW5jZXIiLCJlZGl0OmRhbmNlciIsImdldDpkYW5jZXItZGV0YWlscyJdfQ.K-UZ0X2qbrOCnFrE74IkMQGBkVpvg2_qMY_UUQlDUgNwoGe5j7IcXuvIi_Z8yxfLMI0I9nfiPXujyAVS-rwuDQ_rWIOQXjja9enBLUi1kAggLQIr9p6Q2-vfVXDradzSIEoqrsjWW27Km654Sx8HwmLw5_8yIWt6GLPmmkAxqY0tAV4SFj_hzufarQRJ3VDLry3NGUadSBGzcjY0T3QVXCrMHUlGJGXHxIFbdXLwbvoE2HmluTpEyoCZFCL8s8OrUBJR4yDsh1FKepRVojDIVhuPu0546wdLTPN850pSUj4TKbB7IUvla4_JZMgJJTJzeB3N7cMrWv5BIR1HcMR7JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anna\",\r\n    \"age\": 32\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/1",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"1"
+							]
+						},
+						"description": "Edit dancer edit:dancer"
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers/5",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMmM0NDFiZmQ0M2Q3ZGY1OTUzZSIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDE4MywiZXhwIjoxNzI2NzYwNTgzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImRlbGV0ZTpkYW5jZXIiLCJlZGl0OmRhbmNlciIsImdldDpkYW5jZXItZGV0YWlscyJdfQ.Gor6J2fxZM0p7GEwJc0gwSVExdWn5OKQjRvuBoIVXudwsE3vOubK7aLDM19Hssav-YCfq7qVoCnV-hU_nI3eEROAiv5SiC4FwIDxzUxQVOI2h8CEQRS6x3bfCnTMlgcdMvNyjcS5m7SnjTm2PNl1aA3WbnLuiG93fe9FkHpnvrA9XZouavKdPcyxgB54ln5h4ZHXwTpT4oYkpijB3_7zyy63NRDm40x-zjUTQ0-MNiJ4RP3yFCkIlTgSTW95BHu2LdUYSNtpBTfGP0mJC_Ut5kNV_9Fzcg5qTnuL9DAOfQy4tF6wLtINmYXy7lB-rRL-nLm6wB94EHCHI6zC9B49pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/5",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMmM0NDFiZmQ0M2Q3ZGY1OTUzZSIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDE4MywiZXhwIjoxNzI2NzYwNTgzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImRlbGV0ZTpkYW5jZXIiLCJlZGl0OmRhbmNlciIsImdldDpkYW5jZXItZGV0YWlscyJdfQ.Gor6J2fxZM0p7GEwJc0gwSVExdWn5OKQjRvuBoIVXudwsE3vOubK7aLDM19Hssav-YCfq7qVoCnV-hU_nI3eEROAiv5SiC4FwIDxzUxQVOI2h8CEQRS6x3bfCnTMlgcdMvNyjcS5m7SnjTm2PNl1aA3WbnLuiG93fe9FkHpnvrA9XZouavKdPcyxgB54ln5h4ZHXwTpT4oYkpijB3_7zyy63NRDm40x-zjUTQ0-MNiJ4RP3yFCkIlTgSTW95BHu2LdUYSNtpBTfGP0mJC_Ut5kNV_9Fzcg5qTnuL9DAOfQy4tF6wLtINmYXy7lB-rRL-nLm6wB94EHCHI6zC9B49pw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "EventAgent",
+			"item": [
+				{
+					"name": "/events/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMjdhN2M0NGNhYmZmZTM3ZDNjYiIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MjYwMywiZXhwIjoxNzI2NjY5ODAzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmV2ZW50IiwiZGVsZXRlOmV2ZW50IiwiZWRpdDpldmVudCIsImdldDpldmVudC1kZXRhaWxzIl19.zYSQz49SkMOqxa0fdFu2Gr4HdjyoD22GRKFBky-13nZZTlD__hra9Pq3cHM3FHG8Fxi22GF8jluwRlMH9S4UXJresUq5-x_7gaKYmQKm19j8x841MIuMRZ2WlUWu8-mFS85J1tf2ZIGH2cVnM3WtpZFdWpcPjjQKe9d9qJjQjN0igNoNT4w0z75u18kT1k3NSFUrtnsYfi3GkbUlhB7uD7aPZupXvAAWecdv0rp6l05_fthpMZeB8Bdd6b4VDEmXj5gZ2wchG-jWJBUk1N_hikXUeXPOF8z7E3we8NaihkBnh_AHnakSKOKhbkxE2QmD2Ts4qr_hJlivHRDfOR_C3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/1",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						},
+						"description": "get events by id get:event-details"
+					},
+					"response": []
+				},
+				{
+					"name": "/events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMjdhN2M0NGNhYmZmZTM3ZDNjYiIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MjYwMywiZXhwIjoxNzI2NjY5ODAzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmV2ZW50IiwiZGVsZXRlOmV2ZW50IiwiZWRpdDpldmVudCIsImdldDpldmVudC1kZXRhaWxzIl19.zYSQz49SkMOqxa0fdFu2Gr4HdjyoD22GRKFBky-13nZZTlD__hra9Pq3cHM3FHG8Fxi22GF8jluwRlMH9S4UXJresUq5-x_7gaKYmQKm19j8x841MIuMRZ2WlUWu8-mFS85J1tf2ZIGH2cVnM3WtpZFdWpcPjjQKe9d9qJjQjN0igNoNT4w0z75u18kT1k3NSFUrtnsYfi3GkbUlhB7uD7aPZupXvAAWecdv0rp6l05_fthpMZeB8Bdd6b4VDEmXj5gZ2wchG-jWJBUk1N_hikXUeXPOF8z7E3we8NaihkBnh_AHnakSKOKhbkxE2QmD2Ts4qr_hJlivHRDfOR_C3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Afronation\",\r\n    \"date\": \"09-07-2025\",\r\n    \"address\": \"Praia de Rocha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events"
+							]
+						},
+						"description": "Add event add:event"
+					},
+					"response": []
+				},
+				{
+					"name": "/events/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMjdhN2M0NGNhYmZmZTM3ZDNjYiIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDQwNiwiZXhwIjoxNzI2NzYwODA2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmV2ZW50IiwiZGVsZXRlOmV2ZW50IiwiZWRpdDpldmVudCIsImdldDpldmVudC1kZXRhaWxzIl19.LnCxr8fmts8KgZrYgqIIU3E0pCt0MEE_M_R2gyNOHin4-cmCcpbzekOuihZt_st6ZshsOm4solev0g-Fe__tOoRKVLkL7tR-2xaPe3NSpI1WxUp4FpDL8kAk5RQ14L_G5g24BgOOljGNiOYN6OQNANImEN3dZQCjPXWabhx533xpzga-NYw2EO9eoevIj4Kzg2rJ1fzXHdk2nHLeqxPTc76XdfBp9gBvlmoIOFZ9TlhN6IGMHV8gTbgyZKWKIP4AWu17ImuK6GK5lHdWtlyatFVGw-ZJp1FGhuIaUiWEvL2_1XEnsK6VbhCgefm4E3T7WdxJIe2V11O8LEG5JDUlyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Afro 28\",\r\n    \"address\": \"23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/6",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"6"
+							]
+						},
+						"description": "Edit event"
+					},
+					"response": []
+				},
+				{
+					"name": "/events/5",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMjdhN2M0NGNhYmZmZTM3ZDNjYiIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDQwNiwiZXhwIjoxNzI2NzYwODA2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmV2ZW50IiwiZGVsZXRlOmV2ZW50IiwiZWRpdDpldmVudCIsImdldDpldmVudC1kZXRhaWxzIl19.LnCxr8fmts8KgZrYgqIIU3E0pCt0MEE_M_R2gyNOHin4-cmCcpbzekOuihZt_st6ZshsOm4solev0g-Fe__tOoRKVLkL7tR-2xaPe3NSpI1WxUp4FpDL8kAk5RQ14L_G5g24BgOOljGNiOYN6OQNANImEN3dZQCjPXWabhx533xpzga-NYw2EO9eoevIj4Kzg2rJ1fzXHdk2nHLeqxPTc76XdfBp9gBvlmoIOFZ9TlhN6IGMHV8gTbgyZKWKIP4AWu17ImuK6GK5lHdWtlyatFVGw-ZJp1FGhuIaUiWEvL2_1XEnsK6VbhCgefm4E3T7WdxJIe2V11O8LEG5JDUlyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/5",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"5"
+							]
+						},
+						"description": "Delete event"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZThhMjdhN2M0NGNhYmZmZTM3ZDNjYiIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDQwNiwiZXhwIjoxNzI2NzYwODA2LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmV2ZW50IiwiZGVsZXRlOmV2ZW50IiwiZWRpdDpldmVudCIsImdldDpldmVudC1kZXRhaWxzIl19.LnCxr8fmts8KgZrYgqIIU3E0pCt0MEE_M_R2gyNOHin4-cmCcpbzekOuihZt_st6ZshsOm4solev0g-Fe__tOoRKVLkL7tR-2xaPe3NSpI1WxUp4FpDL8kAk5RQ14L_G5g24BgOOljGNiOYN6OQNANImEN3dZQCjPXWabhx533xpzga-NYw2EO9eoevIj4Kzg2rJ1fzXHdk2nHLeqxPTc76XdfBp9gBvlmoIOFZ9TlhN6IGMHV8gTbgyZKWKIP4AWu17ImuK6GK5lHdWtlyatFVGw-ZJp1FGhuIaUiWEvL2_1XEnsK6VbhCgefm4E3T7WdxJIe2V11O8LEG5JDUlyg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Director",
+			"item": [
+				{
+					"name": "/dancers/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MjkyMywiZXhwIjoxNzI2NjcwMTIzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.JFU5_TYTPTq31mw0IAfu3Hcxss1RZlH0FCMo8TZY8MJh2kvcxmcoo8pUq1xU-oWUzNlio38-sDTpRIHT3Mfwatgnt9gm8_0kY2gyoZt2uXTmV4NUpqm84xbxh2dp5kcJipvtCwCuR4wOzT3KLW6h0uJSNEsy6j5h3pQod35twgUVhkHDFSX0-vVY6cWRokkL9eHPkKhITOfp3Gc-Tqlsk2IMJLa7qpfDDoWww58uP2-CzHLSKRQ-Y4eS4A7j_wYa6WhTCtUBPQi1n3xpoig695Pi1LiL4KwLhPrtsyUTW7zOwOpncjaIId1zDox_E8eFBCBBZ9Wm9YCA0GwyFFKpEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/2",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mark\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/2",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"2"
+							]
+						},
+						"description": "edit dancer"
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anna seren\",\r\n    \"age\": 23,\r\n    \"gender\": \"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers"
+							]
+						},
+						"description": "add dancer"
+					},
+					"response": []
+				},
+				{
+					"name": "/events",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Afro Workshops\",\r\n    \"date\": \"20-09-24\",\r\n    \"address\": \"02 hall NY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/events/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MjkyMywiZXhwIjoxNzI2NjcwMTIzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.JFU5_TYTPTq31mw0IAfu3Hcxss1RZlH0FCMo8TZY8MJh2kvcxmcoo8pUq1xU-oWUzNlio38-sDTpRIHT3Mfwatgnt9gm8_0kY2gyoZt2uXTmV4NUpqm84xbxh2dp5kcJipvtCwCuR4wOzT3KLW6h0uJSNEsy6j5h3pQod35twgUVhkHDFSX0-vVY6cWRokkL9eHPkKhITOfp3Gc-Tqlsk2IMJLa7qpfDDoWww58uP2-CzHLSKRQ-Y4eS4A7j_wYa6WhTCtUBPQi1n3xpoig695Pi1LiL4KwLhPrtsyUTW7zOwOpncjaIId1zDox_E8eFBCBBZ9Wm9YCA0GwyFFKpEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/1",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/dancers/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers/7",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"dancers",
+								"7"
+							]
+						},
+						"description": "delete dancer"
+					},
+					"response": []
+				},
+				{
+					"name": "/events/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/5",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/events/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY2MjkyMywiZXhwIjoxNzI2NjcwMTIzLCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.JFU5_TYTPTq31mw0IAfu3Hcxss1RZlH0FCMo8TZY8MJh2kvcxmcoo8pUq1xU-oWUzNlio38-sDTpRIHT3Mfwatgnt9gm8_0kY2gyoZt2uXTmV4NUpqm84xbxh2dp5kcJipvtCwCuR4wOzT3KLW6h0uJSNEsy6j5h3pQod35twgUVhkHDFSX0-vVY6cWRokkL9eHPkKhITOfp3Gc-Tqlsk2IMJLa7qpfDDoWww58uP2-CzHLSKRQ-Y4eS4A7j_wYa6WhTCtUBPQi1n3xpoig695Pi1LiL4KwLhPrtsyUTW7zOwOpncjaIId1zDox_E8eFBCBBZ9Wm9YCA0GwyFFKpEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ball\",\r\n    \"address\": \"234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events/3",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events",
+								"3"
+							]
+						},
+						"description": "edit event"
+					},
+					"response": []
+				},
+				{
+					"name": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Event\",\r\n    \"address\": \"Toronto\",\r\n    \"date\": \"2023-02-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events",
+							"protocol": "https",
+							"host": [
+								"afrobeatsagency-5975d5a5c006",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhiQnhKTFF4RFlCeDluWG44d3haRSJ9.eyJpc3MiOiJodHRwczovL2Fmcm9kZXYudWsuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDY2ZTlmZTVmMjFjNTFkYWUzMGMyMDIzMyIsImF1ZCI6Imh0dHBzOi8vYWZyb2JlYXRzYWdlbmN5L2FwaSIsImlhdCI6MTcyNjY3NDcyOCwiZXhwIjoxNzI2NzYxMTI4LCJzY29wZSI6IiIsImF6cCI6IlFiNnpTVGEwMDdUZXFRQTF1NEFjaUNmUGVRcG5hbmNIIiwicGVybWlzc2lvbnMiOlsiYWRkOmRhbmNlciIsImFkZDpldmVudCIsImRlbGV0ZTpkYW5jZXIiLCJkZWxldGU6ZXZlbnQiLCJlZGl0OmRhbmNlciIsImVkaXQ6ZXZlbnQiLCJnZXQ6ZGFuY2VyLWRldGFpbHMiLCJnZXQ6ZXZlbnQtZGV0YWlscyJdfQ.ctrhtWQxws9rJqc4cp5-hXCniKPqGdGNnBJgnDAAqtxG-kIWlsAPe9T8zqco4FSVod03aLv9xo5zeKDXiyiHwl6MgEWrBJvVe-N6CqxgZEuupPDHz9_2nDvFYPSx_SuaM1Enb4HD1oT-kT7xa7UeoinS7OC2SABYCGgY9K_REQ92pVbWjd3J0PkWbKoYTPLQDjJiqUyFF6vww24_fGnJphoUU9RTufySGZktSZAT_hWTfwlYUHP4XVwvcFagOG7e-Ss8s69rR5PhSJIYfUuIm-p8EAb8r7J8qAxm58NTG70MnjNRJLiJLlE6Ju4AW1Rk2Kj-h6Jw7eVrjdAI97XuXQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "/dancers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/dancers",
+					"protocol": "https",
+					"host": [
+						"afrobeatsagency-5975d5a5c006",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"dancers"
+					]
+				},
+				"description": "Get all dancers"
+			},
+			"response": []
+		},
+		{
+			"name": "/events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://afrobeatsagency-5975d5a5c006.herokuapp.com/events",
+					"protocol": "https",
+					"host": [
+						"afrobeatsagency-5975d5a5c006",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events"
+					]
+				},
+				"description": "get all events"
+			},
+			"response": []
+		}
+	]
+}
